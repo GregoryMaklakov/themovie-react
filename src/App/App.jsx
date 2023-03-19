@@ -1,10 +1,7 @@
-//import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import styles from "./App.module.css";
-
+import styles from "./App.module.scss";
 
 function App() {
-  return
+  return <div>app</div>
 }
 
 export default App
