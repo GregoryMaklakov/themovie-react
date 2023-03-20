@@ -1,0 +1,75 @@
+@use "../../scss/components/utils" as u;
+
+.logo {
+  font-size: u.rem(20);
+  font-weight: 600;
+
+  @include u.flex(flex-start, center);
+  gap: 8px;
+  img {
+    width: 50px;
+    @include u.media("tablet", max) {
+      width: 30px;
+    }
+  }
+}
+
+.header {
+  height: 120px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: height 0.2s ease, background-color 0.2s ease;
+  &.scroll {
+    height: 80px;
+    background-color: u.$color-bg;
+  }
+  &__wrapper {
+    @include u.flex(space-between, center);
+    height: 100%;
+    padding: 0 u.rem(32);
+    @include u.media("tablet", max) {
+      justify-content: center;
+    }
+  }
+  &__nav {
+    @include u.flex(center, center);
+    li {
+      padding: u.rem(5) 0;
+      font-weight: 700;
+      position: relative;
+      font-size: u.rem(16);
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+      &::after {
+        @include u.pseudo;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        transition: width 0.5s ease;
+        height: 2px;
+        background-color: u.$color-main;
+      }
+
+      &.active::after,
+      &:hover::after {
+        width: 100%;
+      }
+    }
+    @include u.media("tablet", max) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 80px;
+      width: 100%;
+      background-color: u.$color-bg;
+      padding: 0 u.rem(16);
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      @include u.flex(space-between, center);
+    }
+  }
+}

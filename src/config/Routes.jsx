@@ -9,19 +9,23 @@ const Routes = () => {
                 path='/:category/search/:keyword'
                 component={Catalog}>
             </Route>
+
             <Route
                 path='/:category/:id'
                 component={Detail}>
             </Route>
+
             <Route
-                path='/:category/:id'
+                path='/:category'
                 component={Catalog}>
             </Route>
+
             <Route
                 path='/'
                 exact
                 component={Home}>
             </Route>
+
         </Switch>
     )
 }

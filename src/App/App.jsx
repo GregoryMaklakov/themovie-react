@@ -6,13 +6,15 @@ import Routes from '../config/Routes';
 
 import styles from "./App.module.scss";
 
-function App() {
+export const App = () => {
   return (
     <BrowserRouter>
       <Route render={props => (
         <>
           <Header {...props}></Header>
-          <Routes></Routes>
+          <Routes>
+            <div className="div"></div>
+          </Routes>
           <Footer></Footer>
         </>
       )} />
@@ -20,5 +22,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;

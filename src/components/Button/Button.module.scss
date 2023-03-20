@@ -1,0 +1,44 @@
+@use "../../scss/components/utils" as u;
+
+.button {
+  cursor: pointer;
+  border-radius: 30px;
+  color: u.$color-white;
+  z-index: 1000;
+}
+
+.variant-primary {
+  border: 3px solid transparent;
+  background-color: u.$color-main;
+  font-size: u.rem(16);
+  font-weight: 600;
+  box-shadow: 0px 0px 0px 1px u.$color-main;
+  transition: all 0.2s ease 0s;
+  position: relative;
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0px 0px 0px 2px u.$color-main;
+    }
+  }
+  &:active {
+    box-shadow: 0px 0px 0px 2px u.$color-white;
+  }
+}
+
+.variant-secondary {
+  border: 3px solid u.$color-white;
+  background-color: transparent;
+  color: u.$color-white;
+  border-radius: 30px;
+  box-shadow: unset;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+//Size
+.size-s {
+  padding: 0.25rem 1.5rem;
+}
+
+.size-m {
+  padding: 0.5rem 1.8rem;
+}
