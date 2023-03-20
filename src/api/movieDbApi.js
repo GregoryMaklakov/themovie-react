@@ -1,4 +1,4 @@
-// export { axiosClient } from "./axiosClient";
+export { axiosClient } from "./axiosClient";
 
 export const category = {
   movie: "movie",

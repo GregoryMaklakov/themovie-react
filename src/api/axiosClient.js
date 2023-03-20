@@ -3,7 +3,7 @@ import queryString from "query-string";
 import { movieApi } from "./MovieApi";
 
 export const axiosClient = axios.create({
-  baseURL: movieApi.baseURL,
+  baseURL: movieApi.baseUrl,
   headers: {
     "Content-Type": "application/json",
   },
