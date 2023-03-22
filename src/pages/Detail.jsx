@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-export const Detail = props => {
+export const Detail = () => {
     return (
         <div>Detail</div>
     )

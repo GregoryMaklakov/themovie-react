@@ -2,9 +2,8 @@ import "../assets/boxicons-2.0.7/css/boxicons.min.css";
 import "swiper/swiper.min.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Header, Footer } from "../components";
-import Routes from '../config/Routes';
+import { Router } from '../config/Router';
 
-import styles from "./App.module.scss";
 
 export const App = () => {
   return (
@@ -12,13 +11,11 @@ export const App = () => {
       <Route render={props => (
         <>
           <Header {...props}></Header>
-          <Routes>
-            <div className="div"></div>
-          </Routes>
+          <Router>
+          </Router>
           <Footer></Footer>
         </>
       )} />
-
     </BrowserRouter>
   );
 }

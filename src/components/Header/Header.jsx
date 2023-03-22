@@ -43,7 +43,7 @@ export const Header = () => {
 
 
     return (
-        <div ref={headerRef} className={clsx(styles.header)}>
+        <div ref={headerRef} className={styles.header}>
             <div className={clsx(styles.header__wrapper, styles.container)}>
                 <div className={styles.logo}>
                     <img src={logo} alt="logo" className={styles.logo__image}></img>

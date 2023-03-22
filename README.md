@@ -1,15 +1,14 @@
-
-# Starter React
+# theMovie
 
 ### NPM instal
+
 ```bash
   npm i
 ```
 
-
 ## Before the start
 
-#### Libs 
+#### Libs
 
 ```bash
   npm install --save clsx
@@ -19,15 +18,10 @@
   npm install --save prop-types
 ```
 
-
-
-
 ## Authors
 
 - [@HryhoriiMaklakov](https://github.com/GregoryMaklakov)
 
 - [@Linkedin](https://www.linkedin.com/in/grigory-maklakov-331a641ba/)
+
 ## Description
-
-Will be added over time:  libs, mixins, vars and other
-

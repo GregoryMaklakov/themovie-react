@@ -15,15 +15,18 @@
 }
 
 .header {
-  height: 120px;
+  height: 80px;
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 100;
   transition: height 0.2s ease, background-color 0.2s ease;
+  @include u.media("tablet", max) {
+    height: 60px;
+  }
   &.scroll {
-    height: 80px;
+    height: 260px !important;
     background-color: u.$color-bg;
   }
   &__wrapper {
