@@ -28,19 +28,20 @@ export const Header = () => {
 
     useEffect(() => {
         const scrollHeader = () => {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                headerRef.current.classList.add('scroll');
+            if (
+                document.body.scrollTop > 100 ||
+                document.documentElement.scrollTop > 100
+            ) {
+                headerRef.current.classList.add(clsx(styles.scroll));
             } else {
-                headerRef.current.classList.remove('scroll');
+                headerRef.current.classList.remove(clsx(styles.scroll));
             }
-        }
-        window.addEventListener('scroll', scrollHeader)
+        };
+        window.addEventListener("scroll", scrollHeader);
         return () => {
-            window.removeEventListener('scroll', scrollHeader)
-        }
-    }, [])
-
-
+            window.removeEventListener("scroll", scrollHeader);
+        };
+    }, []);
 
     return (
         <div ref={headerRef} className={styles.header}>
@@ -50,16 +51,14 @@ export const Header = () => {
                     <NavLink to="/">theMovies</NavLink>
                 </div>
                 <ul className={styles.header__nav}>
-
-                    {
-                        headerNav.map((e, id) => (
-                            <li key={id} className={clsx(styles.list, `${id === active ? 'active' : ''}`)}>
-                                <NavLink to={e.path}>
-                                    {e.display}
-                                </NavLink>
-                            </li>
-                        ))
-                    }
+                    {headerNav.map((e, id) => (
+                        <li
+                            key={id}
+                            className={clsx(styles.list, `${id === active ? "active" : ""}`)}
+                        >
+                            <NavLink to={e.path}>{e.display}</NavLink>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>
