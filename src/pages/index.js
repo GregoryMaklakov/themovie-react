@@ -1,3 +1,3 @@
-export * from "./Catalog.jsx";
+export * from "./Catalog";
 export * from "./Detail";
 export * from "./Home";

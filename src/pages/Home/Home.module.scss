@@ -1,0 +1,24 @@
+@use "../../scss/components/utils" as *;
+
+.container {
+  max-width: 1236px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.block {
+  display: flex;
+  flex-direction: column;
+}
+.section {
+  margin-bottom: rem(44);
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title {
+  font-weight: 600;
+  color: $color-white;
+}

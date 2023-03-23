@@ -18,20 +18,21 @@ const HeroSlide = () => {
     useEffect(() => {
         const getMovies = async () => {
             //page - array с данными фильмов
-            const params = { page: 3 };
+            const params = { page: 1 };
             const url = `${apiConfig.baseUrl}movie/${movieType.popular}?api_key=${apiConfig.apiKey}&page=${params.page}`;
             try {
                 const response = await fetch(url);
                 const data = await response.json();
-                //колличество слайдов = max 20
+                //колличество слайдов = max 19
                 setMovieItems(data.results.slice(1, 12));
-                console.log(data);
+                // console.log(data);
             } catch (error) {
                 console.log(error);
             }
         };
         getMovies();
     }, []);
+
 
     return (
         <div className="hero-slide">
@@ -43,6 +44,7 @@ const HeroSlide = () => {
                 scrollbar={{ draggable: true }}
                 parallax={{}}
             // autoplay={{ delay: 5000 }}
+            // speed={1000}
             >
                 {movieItems.map((item, i) => (
                     <SwiperSlide key={i}>

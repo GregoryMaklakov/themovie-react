@@ -44,22 +44,24 @@ export const Header = () => {
     }, []);
 
     return (
-        <div ref={headerRef} className={styles.header}>
-            <div className={clsx(styles.header__wrapper, styles.container)}>
-                <div className={styles.logo}>
-                    <img src={logo} alt="logo" className={styles.logo__image}></img>
-                    <NavLink to="/">theMovies</NavLink>
+        <div className={styles.container}>
+            <div ref={headerRef} className={clsx(styles.header)}>
+                <div className={clsx(styles.header__wrapper, styles.container)}>
+                    <div className={styles.logo}>
+                        <img src={logo} alt="logo" className={styles.logo__image}></img>
+                        <NavLink to="/">theMovies</NavLink>
+                    </div>
+                    <ul className={styles.header__nav}>
+                        {headerNav.map((e, id) => (
+                            <li
+                                key={id}
+                                className={clsx(styles.list, `${id === active ? "active" : ""}`)}
+                            >
+                                <NavLink to={e.path}>{e.display}</NavLink>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-                <ul className={styles.header__nav}>
-                    {headerNav.map((e, id) => (
-                        <li
-                            key={id}
-                            className={clsx(styles.list, `${id === active ? "active" : ""}`)}
-                        >
-                            <NavLink to={e.path}>{e.display}</NavLink>
-                        </li>
-                    ))}
-                </ul>
             </div>
         </div>
     );
