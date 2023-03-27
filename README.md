@@ -44,8 +44,7 @@ Javascript, HTML, React, Styles-Module-Cssand other...
 
 ## Authors
 
-- [@Hryh![136721135-f64988cf-af31-495f-988c-c24ab10cbade](https://user-images.githubusercontent.com/105268946/227931282-dded8296-b189-4174-b50d-6bc97afd297f.png)
-oriiMaklakov](https://github.com/GregoryMaklakov)
+- [![136721135-f64988cf-af31-495f-988c-c24ab10cbade](https://user-images.githubusercontent.com/105268946/227931282-dded8296-b189-4174-b50d-6bc97afd297f.png)](https://github.com/GregoryMaklakov)
 
 
 - [@Linkedin](https://www.linkedin.com/in/grigory-maklakov-331a641ba/)
