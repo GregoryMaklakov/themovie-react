@@ -1,6 +1,6 @@
 import styles from "./MovieList.module.scss";
 import { useState, useEffect } from "react";
-import { tmdbApi, movieType, apiConfig } from "../../api/apiClient";
+import { tmdbApi, apiConfig } from "../../api/apiClient";
 import { NavLink } from "react-router-dom";
 
 export const MovieList = ({ category, type }) => { // добавляем параметры category и type в компонент
@@ -11,7 +11,6 @@ export const MovieList = ({ category, type }) => { // добавляем пар�
             const data = await tmdbApi.getMoviesList(type); // используем параметр type для получения списка фильмов
             setMovies(data.results);
         };
-
         fetchData();
     }, [type]); // добавляем type в зависимости, чтобы компонент перерендерился при изменении типа фильмов
 
