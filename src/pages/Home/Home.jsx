@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { Button } from '../../components/button/Button'
+import { Button } from '../../components/Button/Button'
 import HeroSlide from '../../components/HeroSlide/HeroSlide'
 import { MovieList } from '../../components/MovieList';
 import { category, movieType, tvType } from '../../api/apiClient'
