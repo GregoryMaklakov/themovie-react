@@ -23,7 +23,7 @@ export const Home = () => {
                     <div className={styles.section}>
                         <div className={styles.heading}>
                             <h2 className={styles.title}>Top Rated</h2>
-                            <NavLink to='/movie'>
+                            <NavLink to='/'>
                                 <Button className={styles.button} variant='secondary' size='s'>Viev More</Button>
                             </NavLink>
                         </div>
@@ -32,7 +32,7 @@ export const Home = () => {
                     <div className={styles.section}>
                         <div className={styles.heading}>
                             <h2 className={styles.title}>Top Rated TV</h2>
-                            <NavLink to='/tv'>
+                            <NavLink to='/'>
                                 <Button className={styles.button} variant='secondary' size='s'>Viev More</Button>
                             </NavLink>
                         </div>
