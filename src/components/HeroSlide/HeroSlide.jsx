@@ -1,15 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import SwiperCore, { Autoplay, Parallax, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Button } from "../button/Button";
+import { Button } from "../Button/Button";
 import { Modal, ModalContent } from "../Modal";
 import { apiConfig, tmdbApi, movieType, category } from "../../api/apiClient";
 import { clsx } from 'clsx';
 import "./HeroSlide.scss";
 import { useHistory } from "react-router";
 
-import 'swiper/css/scrollbar';
-import 'swiper/css/parallax';
 
 const HeroSlide = () => {
     SwiperCore.use([Autoplay, Parallax, Scrollbar]);
