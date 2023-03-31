@@ -3,10 +3,13 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { Header, Footer } from "../components";
 import { Router } from '../config/Router';
 import "swiper/swiper.min.css";
+import './App.module.scss';
+
 
 export const App = () => {
   return (
     <BrowserRouter>
+
       <Route render={props => (
         <>
           <Header {...props}></Header>

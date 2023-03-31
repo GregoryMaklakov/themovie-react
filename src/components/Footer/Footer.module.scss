@@ -1,0 +1,51 @@
+@use "../../scss/components/utils" as *;
+
+.container {
+  max-width: 1236px;
+  margin: 0 auto;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.footer {
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  @include media("tablet", max) {
+    padding-bottom: 104px;
+  }
+}
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  @include media("phone-wide", max) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+  &:not(:last-child) {
+    margin-bottom: 48px;
+  }
+  a {
+    transition: all 0.3s ease 0s;
+    font-weight: 500;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $color-main;
+      }
+    }
+  }
+}
