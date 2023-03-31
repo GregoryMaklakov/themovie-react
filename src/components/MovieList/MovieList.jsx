@@ -2,6 +2,7 @@ import styles from "./MovieList.module.scss";
 import { useState, useEffect } from "react";
 import { tmdbApi, apiConfig } from "../../api/apiClient";
 import { NavLink } from "react-router-dom";
+import { MovieCard } from "../MovieCard/MovieCard";
 
 export const MovieList = ({ category, type }) => {
     const [movies, setMovies] = useState([]);
@@ -26,11 +27,7 @@ export const MovieList = ({ category, type }) => {
         <div className={styles.list}>
             {items.map((item) => (
                 <NavLink to="/" className={styles.item} key={item.id}>
-                    <img
-                        className={styles.image}
-                        src={apiConfig.w500Image(item.poster_path)}
-                        alt={item.title}
-                    />
+                    <MovieCard item={item} category={category}></MovieCard>
                 </NavLink>
             ))}
         </div>
