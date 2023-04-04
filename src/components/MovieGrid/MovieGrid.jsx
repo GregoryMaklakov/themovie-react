@@ -1,10 +1,16 @@
 import PropTypes from "prop-types";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import styles from "./MovieGrid.module.scss";
 import { MovieCard } from "../MovieCard/MovieCard";
-import { tmdbApi, movieType, tvType, category as cate } from "../../api/apiClient";
-import { useParams } from "react-router-dom";
+import {
+    tmdbApi,
+    movieType,
+    tvType,
+    category as cate,
+} from "../../api/apiClient";
+import { useParams, useHistory } from "react-router-dom";
 import { Button } from "../Button/Button";
+import { Input } from "../Input";
 
 export const MovieGrid = ({ category }) => {
     const [items, setItems] = useState([]);
@@ -45,7 +51,7 @@ export const MovieGrid = ({ category }) => {
         const nextPage = page + 1;
         if (keyword === undefined) {
             const params = {
-                page: nextPage
+                page: nextPage,
             };
             switch (category) {
                 case cate.movie:
@@ -64,14 +70,17 @@ export const MovieGrid = ({ category }) => {
             response = await tmdbApi.search(category, { params });
         }
         setItems((prevItems) => [...prevItems, ...response.results]);
-        setPage(nextPage)
-    }
+        setPage(nextPage);
+    };
 
     return (
         <>
+            <div className={styles.inputSearch}>
+                <MovieSerch category={category} keyword={keyword} />
+            </div>
             <div className={styles.grid}>
                 {items.map((item, i) => (
-                    <MovieCard category={cate} item={item} key={i} />
+                    <MovieCard category={category} item={item} key={i} />
                 ))}
             </div>
             {page < totalPage ? (
@@ -82,6 +91,45 @@ export const MovieGrid = ({ category }) => {
                 </div>
             ) : null}
         </>
+    );
+};
+
+const MovieSerch = ({ category, word }) => {
+    const history = useHistory();
+
+    const [keyword, setKeyword] = useState(word ? word : "");
+
+    const toSearch = useCallback(() => {
+        if (keyword.trim().length > 0) {
+            history.push(`${cate[category]}/search/${keyword}`)
+        }
+    }, [keyword, category, history]);
+
+    useEffect(() => {
+        const enterEvent = (e) => {
+            e.preventDefault();
+            if (e.keyCode === 13) {
+                toSearch();
+            }
+        }
+        document.addEventListener('keyup', enterEvent);
+
+        return () => {
+            document.removeEventListener('keyup', enterEvent);
+        }
+    }, [keyword, toSearch])
+
+
+    return (
+        <div className={styles.search}>
+            <Input
+                disabled
+                type="text"
+                placeholder="Enter keyword"
+                value={word}
+                onChange={(e) => setKeyword(e.target.value)}
+            />
+        </div>
     );
 };
 

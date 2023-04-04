@@ -1,4 +1,12 @@
-export * from "./Header";
+// export * from "./Button";
 export * from "./Footer";
+export * from "./Header";
 export * from "./HeroSlide";
 export * from "./Modal";
+export * from "./Header";
+export * from "./HeroSlide";
+export * from "./Loader";
+export * from "./Modal";
+export * from "./MovieCard";
+export * from "./MovieGrid";
+export * from "./MovieList";

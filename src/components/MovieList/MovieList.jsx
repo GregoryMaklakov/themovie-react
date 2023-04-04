@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { tmdbApi, apiConfig } from "../../api/apiClient";
 import { NavLink } from "react-router-dom";
 import { MovieCard } from "../MovieCard/MovieCard";
+import { Button } from '../Button/Button';
 
 export const MovieList = ({ category, type }) => {
     const [movies, setMovies] = useState([]);
@@ -26,9 +27,9 @@ export const MovieList = ({ category, type }) => {
     return (
         <div className={styles.list}>
             {items.map((item) => (
-                <NavLink to="/" className={styles.item} key={item.id}>
+                <div to="/" className={styles.item} key={item.id}>
                     <MovieCard item={item} category={category}></MovieCard>
-                </NavLink>
+                </div>
             ))}
         </div>
     );

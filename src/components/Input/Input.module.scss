@@ -1,0 +1,23 @@
+@use "../../scss/components/utils" as *;
+
+input {
+  border: 0;
+  background-color: $color-black;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: $base-font-color;
+  font-family: $primary-font;
+  outline: none;
+  margin: 12px 12px 12px 0;
+  width: 100%;
+  max-width: 400px;
+  &:disabled {
+    cursor: no-drop;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+  &:hover {
+    box-shadow: 0 0 0 1px rgb(159, 87, 32, 0.4);
+  }
+}
