@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import styles from './MovieCard.module.scss';
 import { Link } from 'react-router-dom';
-import { tmdbApi, apiConfig, category } from "../../api/apiClient";
+import { apiConfig, category } from "../../api/apiClient";
 import { Button } from '../Button/Button';
 
 

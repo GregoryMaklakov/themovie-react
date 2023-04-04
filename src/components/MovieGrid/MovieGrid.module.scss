@@ -1,0 +1,14 @@
+@use "../../scss/components/utils" as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.loadMore {
+  display: grid;
+  place-items: center;
+}

@@ -1,0 +1,18 @@
+@use "../../../scss/components/utils" as *;
+
+.headerTitle {
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  h2 {
+    position: relative;
+    z-index: 99;
+    font-weight: 700;
+  }
+  &::after {
+    content: "";
+  }
+}

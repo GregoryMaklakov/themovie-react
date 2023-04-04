@@ -16,7 +16,7 @@ const HeroSlide = () => {
         const getMovies = async () => {
             //page - array с данными фильмов
             const params = { page: 1 };
-            const url = `${apiConfig.baseUrl}movie/${movieType.popular}?api_key=${apiConfig.apiKey}&page=${params.page}`;
+            const url = `${apiConfig.baseUrl}movie/${movieType.popular}?api_key=${apiConfig.API_KEY}&page=${params.page}`;
             try {
                 const response = await fetch(url);
                 const data = await response.json();

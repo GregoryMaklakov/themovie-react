@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import logo from "../../assets/svg/logo.svg";
 import footerBg from "../../assets/image/footer-bg.jpg";
 import styles from "./Footer.module.scss";
@@ -51,4 +50,3 @@ export const Footer = () => {
     );
 };
 
-Footer.propTypes = {};

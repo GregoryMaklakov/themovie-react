@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import styles from "./Button.module.scss";
 
-export const Button = ({ variant, size, onClick, className, children }) => {
+export const Button = ({ variant, size, onClick, className, children, disabled }) => {
     return (
         <button
             className={clsx(
@@ -12,6 +12,7 @@ export const Button = ({ variant, size, onClick, className, children }) => {
                 styles[`size-${size}`]
             )}
             onClick={onClick}
+            disabled={disabled}
         >
             {children}
         </button>
@@ -19,9 +20,10 @@ export const Button = ({ variant, size, onClick, className, children }) => {
 };
 
 Button.propTypes = {
-    children: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
     onClick: PropTypes.func,
     variant: PropTypes.oneOf(["primary", "secondary"]),
     size: PropTypes.oneOf(["s", "m"]),
     className: PropTypes.string,
+    disabled: PropTypes.bool,
 };
