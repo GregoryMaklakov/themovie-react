@@ -42,7 +42,7 @@ Javascript, HTML, React, Styles-Module-Cssand other...
 
 ## Screenshots
 
-- [![136721135-f64988cf-af31-495f-988c-c24ab10cbade](https://user-images.githubusercontent.com/105268946/227931282-dded8296-b189-4174-b50d-6bc97afd297f.png)](https://github.com/GregoryMaklakov)
+<img width="752" alt="image" src="https://user-images.githubusercontent.com/105268946/230123852-3990b57a-7603-4002-ba12-f4ad59327de2.png">
 
 ## My contacts
 
