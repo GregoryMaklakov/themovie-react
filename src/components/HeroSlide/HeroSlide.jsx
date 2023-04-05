@@ -40,8 +40,8 @@ const HeroSlide = () => {
                 slidesPerView={1}
                 scrollbar={{ draggable: true }}
                 parallax={{}}
-            // autoplay={{ delay: 5000 }}
-            // speed={1000}
+                autoplay={{ delay: 5000 }}
+                speed={1000}
             >
                 {movieItems.map((item, i) => (
                     <SwiperSlide key={i}>

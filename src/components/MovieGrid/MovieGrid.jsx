@@ -125,7 +125,7 @@ const MovieSerch = ({ category, word }) => {
             <Input
                 disabled
                 type="text"
-                placeholder="Enter keyword"
+                placeholder="Will be soon..."
                 value={word}
                 onChange={(e) => setKeyword(e.target.value)}
             />

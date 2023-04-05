@@ -1,0 +1,98 @@
+@use "../../scss/components/utils" as *;
+
+.banner {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  @include media("tablet", max) {
+    padding: 100px 0;
+  }
+  // overlay
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include overlay();
+  }
+  //затемнение внизу
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, $color-bg, rgba($color-black, 0));
+  }
+}
+
+.container {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  max-width: 1260px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 64px;
+  margin-top: -200px;
+
+  @include media("tablet", max) {
+    padding: 0 24px;
+  }
+}
+.poster {
+  flex: 1;
+  @include media("tablet", max) {
+    display: none;
+  }
+}
+
+.image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 165%;
+  border-radius: 16px;
+  margin-bottom: 50px;
+}
+.info {
+  width: 60%;
+  height: auto;
+  padding-left: 32px;
+  position: relative;
+  > *:not(.title) {
+    margin-bottom: 32px;
+  }
+  @include media("tablet", max) {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+.title {
+  font-size: 62px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.tagline {
+  font-size: 16px;
+}
+.genres {
+  display: flex;
+  gap: 14px;
+}
+.genre {
+  border-radius: 22px;
+  padding: 2px 8px;
+  border: 1px solid $color-white;
+}
+
+.overview {
+  font-weight: 400;
+  color: rgb(255, 255, 255, 0.8);
+}
