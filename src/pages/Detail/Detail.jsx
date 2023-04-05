@@ -17,7 +17,6 @@ export const Detail = () => {
         };
         getDetail();
     }, [category, id]);
-    console.log(item);
 
     return (
         <>
@@ -54,7 +53,8 @@ export const Detail = () => {
                             </div>
                             <p className={styles.overview}>{item.overview}</p>
                             <div className={styles.cast}>
-                                {/* <Cast id={item.id}></Cast> */}
+                                <p className={styles.castTitle}>Cast</p>
+                                <Cast id={item.id}></Cast>
                             </div>
                         </div>
                     </div>

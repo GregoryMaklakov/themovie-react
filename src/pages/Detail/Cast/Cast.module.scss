@@ -1,1 +1,20 @@
 @use "../../../scss/components/utils" as *;
+
+.casts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  row-gap: 24px;
+}
+.item {
+  margin-right: 12px;
+}
+.photo {
+  padding-top: 160px;
+  background-size: cover;
+  border-radius: 12px;
+}
+.name {
+  text-align: center;
+  font-weight: 500;
+  margin-top: 12px;
+}

@@ -6,21 +6,24 @@ import styles from "./Cast.module.scss";
 
 export const Cast = ({ id }) => {
     const { category } = useParams();
-    const { casts, setCasts } = useState([]);
+    const [casts, setCasts] = useState([]);
 
     useEffect(() => {
-        getCredits = async () => {
+        const getCredits = async () => {
             const response = await tmdbApi.credits(category, id);
-            setCasts(response.slice(0, 5));
+            const cast = Array.isArray(response.cast) ? response.cast : [];
+            setCasts(cast.slice(0, 7));
+            console.log(response);
         };
         getCredits();
     }, [category, id]);
+
     return (
         <div className={styles.casts}>
             {casts.map((item, i) => (
                 <div key={i} className={styles.item}>
                     <div
-                        className={styles.image}
+                        className={styles.photo}
                         style={{
                             backgroundImage: `url(${apiConfig.w500Image(item.profile_path)})`,
                         }}
